@@ -25,17 +25,18 @@ let running = 0
 let axlespertrain = 0
 let count = 0
 count = 0
-let actintbtwnaxles = 500
+let actintbtwnaxles = 1000
 axlespertrain = 40
 let actintbtwntrains = 60000
 running = 0
+let halfactintbtwnaxles = actintbtwnaxles / 2
 basic.forever(function () {
     if (running == 1) {
         for (let index = 0; index < axlespertrain; index++) {
-            basic.pause(actintbtwnaxles)
+            basic.pause(halfactintbtwnaxles)
             count += 1
             pins.digitalWritePin(DigitalPin.P0, 1)
-            basic.pause(actintbtwnaxles)
+            basic.pause(halfactintbtwnaxles)
             pins.digitalWritePin(DigitalPin.P0, 0)
             soundExpression.spring.play()
         }
