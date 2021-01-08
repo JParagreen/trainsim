@@ -1,3 +1,44 @@
+input.onButtonPressed(Button.A, function () {
+    if (running == 0) {
+        running = 1
+    } else {
+        running = 0
+    }
+})
+input.onGesture(Gesture.TiltLeft, function () {
+    basic.showString("" + (axlespertrain))
+    axlespertrain += 10
+    basic.showString("" + (axlespertrain))
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showString("" + (count))
+})
+input.onGesture(Gesture.TiltRight, function () {
+    basic.showString("" + (axlespertrain))
+    axlespertrain += -10
+    basic.showString("" + (axlespertrain))
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showString("" + (running))
+})
+let running = 0
+let axlespertrain = 0
+let count = 0
+count = 0
+let actintbtwnaxles = 500
+axlespertrain = 40
+let actintbtwntrains = 60000
+running = 0
 basic.forever(function () {
-	
+    if (running == 1) {
+        for (let index = 0; index < axlespertrain; index++) {
+            basic.pause(actintbtwnaxles)
+            count += 1
+            pins.digitalWritePin(DigitalPin.P0, 1)
+            basic.pause(actintbtwnaxles)
+            pins.digitalWritePin(DigitalPin.P0, 0)
+            soundExpression.spring.play()
+        }
+        basic.pause(actintbtwntrains)
+    }
 })
