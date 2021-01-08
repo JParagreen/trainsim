@@ -6,16 +6,26 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onGesture(Gesture.TiltLeft, function () {
-    basic.showString("" + (axlespertrain))
-    axlespertrain += 10
+    if (axlespertrain < 10) {
+        axlespertrain += 2
+    } else {
+        if (true) {
+            axlespertrain += 10
+        }
+    }
     basic.showString("" + (axlespertrain))
 })
 input.onButtonPressed(Button.B, function () {
     basic.showString("" + (count))
 })
 input.onGesture(Gesture.TiltRight, function () {
-    basic.showString("" + (axlespertrain))
-    axlespertrain += -10
+    if (axlespertrain >= 20) {
+        axlespertrain += -10
+    } else {
+        if (axlespertrain >= 4) {
+            axlespertrain += -2
+        }
+    }
     basic.showString("" + (axlespertrain))
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
