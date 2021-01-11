@@ -48,7 +48,6 @@ basic.forever(function () {
             pins.digitalWritePin(DigitalPin.P0, 1)
             basic.pause(halfactintbtwnaxles)
             pins.digitalWritePin(DigitalPin.P0, 0)
-            soundExpression.spring.play()
         }
         basic.pause(actintbtwntrains)
     }
