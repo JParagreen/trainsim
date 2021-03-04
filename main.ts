@@ -39,14 +39,16 @@ let actintbtwnaxles = 2000
 axlespertrain = 40
 let actintbtwntrains = 60000
 running = 0
+let ontime = 500
+let offtime = 1000
 let halfactintbtwnaxles = actintbtwnaxles / 2
 basic.forever(function () {
     if (running == 1) {
         for (let index = 0; index < axlespertrain; index++) {
-            basic.pause(halfactintbtwnaxles)
+            basic.pause(offtime)
             count += 1
             pins.digitalWritePin(DigitalPin.P0, 1)
-            basic.pause(halfactintbtwnaxles)
+            basic.pause(ontime)
             pins.digitalWritePin(DigitalPin.P0, 0)
         }
         basic.pause(actintbtwntrains)
