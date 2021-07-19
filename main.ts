@@ -39,8 +39,8 @@ let actintbtwnaxles = 2000
 axlespertrain = 40
 let actintbtwntrains = 60000
 running = 0
-let ontime = 200
-let offtime = 200
+let ontime = 100
+let offtime = 100
 let halfactintbtwnaxles = actintbtwnaxles / 2
 basic.forever(function () {
     if (running == 1) {
